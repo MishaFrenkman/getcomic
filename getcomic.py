@@ -5,7 +5,7 @@ import envoy
 from random import randint
 from bs4 import BeautifulSoup
 from urllib import urlretrieve
-import time
+from time import sleep
 
 number = randint(1, 1850)
 
@@ -15,5 +15,5 @@ src = "https:" + BeautifulSoup(r.text, "lxml").find(id="comic").find("img")["src
 urlretrieve(src, "pic.png")
 envoy.run("open pic.png")
 
-#time.sleep(1)
+#sleep(1)
 #envoy.run("rm pic.png")
